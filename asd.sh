@@ -1,9 +1,9 @@
 #!/bin/bash
-directory(){
+directory(){ # fd excludes hidden directories by default
   cd && dir=$(cd |fd . '/home/' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white) && cd -- $dir
 }
 
-file(){
+file(){ #rg seems to be faster
   cd &&  file=$(cd | rg --files |fzf -e --tac --reverse --info=inline --border=sharp --color=border:white) && vim $file
 }
 
@@ -27,3 +27,4 @@ while getopts ":dfh" option; do
    esac
 done
 
+cd && dir=$(cd |fd . '/home/' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white) && cd -- $dir
