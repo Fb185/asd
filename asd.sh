@@ -1,6 +1,7 @@
 #!/bin/bash
 directory(){ # fd excludes hidden directories by default
   cd && dir=$(cd |fd . '/home/' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white) && cd -- $dir
+  # cd && dir=$(cd |fd . '/home/naruto/' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white) && cd -- $dir
 }
 
 file(){ #rg seems to be faster
@@ -27,4 +28,5 @@ while getopts ":dfh" option; do
    esac
 done
 
-cd && dir=$(cd |fd . '/home/' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white) && cd -- $dir
+#cd && dir=$(cd |fd . '/home/' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white) && cd -- $dir
+directory

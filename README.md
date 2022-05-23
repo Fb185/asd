@@ -2,7 +2,9 @@
 # asd
 
 asd is a small bash script to quickly jump to different directories or files with fzf.
+## Requirements
 
+This script uses `fd` `fzf` and `rg`
 ## Installation
 
 Clone the repository
@@ -15,25 +17,29 @@ Make the script executable
 chmod +x ./asd.sh
 ```
 
-Run the script
+Source the script
 ```bash
-./asd.sh
+source ./asd.sh
+```
+For optimal use, use an alias in your `bashrc` or `zshrc` file
+```bashr
+source path/to/script.sh
 ```
 
 ## Usage
 Search directories
 ```bash
-./asd.sh -d
+asd -d
 ```
 
 Search files
 ```bash
-./asd.sh -f
+asd -f
 ```
 
-Inclide hidden directories in search 
+Include hidden directories in search 
 ```bash
-./asd.sh -h
+asd -h
 ```
 
 ## Tweaks
