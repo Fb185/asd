@@ -4,7 +4,7 @@
 asd is a small bash script to quickly jump to different directories or files with fzf.
 ## Requirements
 
-This script uses `fd` `fzf` and `rg`
+This script uses `fd` `fzf` and `ripgrep`
 ## Installation
 
 Clone the repository
@@ -40,6 +40,11 @@ asd -f
 Include hidden directories in search 
 ```bash
 asd -h
+```
+
+Default: Search directories
+```bash
+asd
 ```
 
 ## Tweaks
