@@ -1,14 +1,14 @@
 #!/bin/bash
 directory(){ # fd excludes hidden directories by default
-    fd . '/home/' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white>directory ;cd $(cat directory)
+    dir=$(fd . '/home/naruto' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white);cd $dir
 }
 
 file(){ #rg seems to be faster
-    file=$(fd . '/home/' --type f | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white>file; xdg-open $(cat file))
+    file=$(fd . '/home/naruto' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white);vim $file
 }
 
 hiddendir(){ # includes hidden directories
-  dir=$(find ~/ type f | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white>file; xdg-open $(cat file))
+    hdir=$(fd . '/home/naruto' --type d | fzf -e --tac --reverse --info=inline --border=sharp --color=border:white);cd $hdir
 }
 while getopts ":dfh" option; do
    case $option in
